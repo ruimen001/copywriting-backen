@@ -1,0 +1,3 @@
+def build_xiaohongshu_copywriting(topic: str, tone: str, keywords: list[str]) -> str:
+    keywords_text = "、".join(keywords) if keywords else "无"
+    return f"【小红书风格】主题：{topic}｜语气：{tone}｜关键词：{keywords_text}｜正文：这是一篇适合小红书的种草文案。"
