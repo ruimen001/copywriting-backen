@@ -145,7 +145,7 @@ const generateCopy = async () => {
       keywords: keywordsArray
     }
 
-    const response = await axios.post('https://7730154261b63e.lhr.life/api/v1/copywriting/generate', payload)
+    const response = await axios.post('https://copywriting-backen.onrender.com/api/v1/copywriting/generate', payload)
 
     // 根据你 Swagger 截图的 Response body 结构获取 content
     if (response.data && response.data.content) {
