@@ -1,20 +1,11 @@
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.v1.endpoints.copywriting import router as copywriting_router
-from app.core.config import settings
 from app.core.exceptions import LLMGenerationError, UnsupportedPlatformError
 from app.schemas.common import ErrorResponse
 
-app = FastAPI(title=settings.app_name)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = FastAPI(title="Copywriting API")
 app.include_router(copywriting_router, prefix="/api/v1")
 
 
